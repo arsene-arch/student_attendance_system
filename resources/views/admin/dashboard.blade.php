@@ -321,6 +321,16 @@
                     </a>
                 </div>
             </div>
+
+            <div class="menu-section">
+                <h6 class="menu-header">Account</h6>
+                <div class="menu-items">
+                    <a href="#" class="menu-item" onclick="confirmLogout()">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -342,15 +352,6 @@
 
         <!-- Statistics Cards -->
         <div class="stats-grid">
-            <div class="stat-card primary">
-                <div class="stat-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-number">{{ $totalUsers ?? 0 }}</div>
-                    <div class="stat-label">Total Users</div>
-                </div>
-            </div>
             <div class="stat-card success">
                 <div class="stat-icon">
                     <i class="fas fa-chalkboard-teacher"></i>
@@ -367,15 +368,6 @@
                 <div class="stat-content">
                     <div class="stat-number">{{ $totalStudents ?? 0 }}</div>
                     <div class="stat-label">Students</div>
-                </div>
-            </div>
-            <div class="stat-card warning">
-                <div class="stat-icon">
-                    <i class="fas fa-calendar-check"></i>
-                </div>
-                <div class="stat-content">
-                    <div class="stat-number">{{ $totalAttendance ?? 0 }}</div>
-                    <div class="stat-label">Attendance Records</div>
                 </div>
             </div>
         </div>
@@ -507,6 +499,18 @@
                 sidebar.classList.remove('show');
             }
         });
+
+        // Logout confirmation
+        function confirmLogout() {
+            if (confirm('Are you sure you want to logout?')) {
+                document.getElementById('logout-form').submit();
+            }
+        }
     </script>
+
+    <!-- Hidden Logout Form -->
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 </body>
 </html>
