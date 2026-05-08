@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SchoolClassController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -39,5 +40,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/students', [AdminController::class, 'storeStudent'])->name('students.store');
         Route::get('/attendance', [AdminController::class, 'attendance'])->name('attendance');
         Route::delete('/clear-attendance', [AdminController::class, 'clearAllAttendance'])->name('clear-attendance');
+        
+        // Class routes
+        Route::resource('classes', SchoolClassController::class);
     });
 });

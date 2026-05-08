@@ -287,6 +287,10 @@
                         <i class="fas fa-graduation-cap me-2"></i>
                         Students
                     </a>
+                    <a href="{{ route('admin.classes.index') }}" class="menu-item">
+                        <i class="fas fa-school me-2"></i>
+                        Classes
+                    </a>
                     <a href="{{ route('admin.attendance') }}" class="menu-item">
                         <i class="fas fa-calendar-check me-2"></i>
                         All Attendance
@@ -304,6 +308,10 @@
                     <a href="{{ route('admin.students.create') }}" class="menu-item">
                         <i class="fas fa-user-plus me-2"></i>
                         Add Student
+                    </a>
+                    <a href="{{ route('admin.classes.create') }}" class="menu-item">
+                        <i class="fas fa-school me-2"></i>
+                        Add Class
                     </a>
                     <a href="{{ route('attendance.index') }}" class="menu-item">
                         <i class="fas fa-plus me-2"></i>
