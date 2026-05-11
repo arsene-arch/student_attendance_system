@@ -277,6 +277,20 @@
                 <span class="text-muted">Already have an account? </span>
                 <a href="/login" class="link-hover fw-semibold">Sign In</a>
             </div>
+            
+            @if(session('success'))
+                <div class="alert alert-success mt-3 text-center">
+                    <i class="fas fa-check-circle me-2"></i>
+                    {{ session('success') }}
+                </div>
+                
+                <div class="text-center mt-3">
+                    <a href="/login" class="btn btn-outline-secondary">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Go to Login
+                    </a>
+                </div>
+            @endif
         </form>
     </div>
 

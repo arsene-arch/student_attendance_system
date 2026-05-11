@@ -413,6 +413,10 @@
                     <i class="fas fa-plus"></i>
                     Add New Class
                 </a>
+                <a href="#" class="add-btn" onclick="confirmLogout()" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
             </div>
         </div>
 
